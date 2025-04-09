@@ -6,12 +6,24 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:31:50 by dias              #+#    #+#             */
-/*   Updated: 2025/04/09 10:43:44 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/09 11:12:57 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOSOPHERS_H
 # define PHILOSOPHERS_H
+
+typedef struct s_philo
+{
+	int				id;
+	int				left_fork;
+	int				right_fork;
+	int				meals_eaten;
+	int				is_eating;
+	long long		last_meal_time;
+	struct s_data	*data;
+	pthread_t		thread;
+}				t_philo;
 
 typedef struct s_data
 {
@@ -30,24 +42,12 @@ typedef struct s_data
 	t_philo			*philos;
 }				t_data;
 
-typedef struct s_philo
-{
-	int				id;
-	int				left_fork;
-	int				right_fork;
-	int				meals_eaten;
-	int				is_eating;
-	long long		last_meal_time;
-	struct s_data	*data;
-	pthread_t		thread;
-}				t_philo;
-
 typedef struct s_time
 {
 	long long	seconds;
 	long long	microseconds;
 }				t_time;
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str);
 
 #endif

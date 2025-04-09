@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:30:27 by dias              #+#    #+#             */
-/*   Updated: 2025/04/09 10:34:38 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/09 11:11:29 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
