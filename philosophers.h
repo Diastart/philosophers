@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:31:50 by dias              #+#    #+#             */
-/*   Updated: 2025/04/09 11:42:57 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/09 11:43:51 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHILOSOPHERS_H
 # include <stdio.h>
 # include <stdlib.h>
+# include <pthread.h>
 
 typedef struct s_philo
 {
