@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:25:53 by dias              #+#    #+#             */
-/*   Updated: 2025/04/09 11:42:51 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/09 11:44:47 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ int	init(t_data *data)
 {
 	if(init_data(data))
 		return (1);
-	init_philosophers(data)
+	init_philosophers(data);
 	return (0);
 }
