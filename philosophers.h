@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:31:50 by dias              #+#    #+#             */
-/*   Updated: 2025/04/09 11:46:16 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/11 11:48:33 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ typedef struct s_time
 }				t_time;
 
 int		ft_atoi(const char *str);
-void	parse_arguments(int ac, char *av[], t_data *data);
+int		parse_arguments(int ac, char *av[], t_data *data);
+int		invalid_arguments_check(t_data *data);
 int		init(t_data *data);
 int		init_data(t_data *data);
 void	init_philosophers(t_data *data);
