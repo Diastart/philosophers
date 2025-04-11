@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:00:47 by dias              #+#    #+#             */
-/*   Updated: 2025/04/11 11:50:04 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/11 11:53:09 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	invalid_arguments_check(t_data *data)
 {
 	if (data->num_philos <= 0)
-		printf("Number of philos is invalid to start the program\n")
+		printf("Number of philos is invalid to start the program\n");
 	else if (data->time_to_die <= 0)
 		printf("Time to die is invalid to start the program\n");
 	else if (data->time_to_eat < 0)

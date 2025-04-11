@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.c                                     :+:      :+:    :+:   */
+/*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 10:34:16 by dias              #+#    #+#             */
-/*   Updated: 2025/04/11 11:52:39 by dias             ###   ########.fr       */
+/*   Created: 2025/04/11 11:54:44 by dias              #+#    #+#             */
+/*   Updated: 2025/04/11 11:57:10 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int	main(int ac, char *av[])
+long long	get_current_time(void)
 {
-	t_data	data;
+	struct timeval	time;
 
-	if (ac < 5 || ac > 6)
-	{
-		printf("Number of inputs does not satisfy constraints\n");
-		return (0);
-	}
-	if (parse_arguments(ac, av, &data))
-		return (0);
-	if (init(&data))
-	{
-		printf("Error during initialization\n");
-		return (0);
-	}
+	gettimeofday(&time, NULL);
+	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
+}
+
+void	ft_sleep(int milliseconds)
+{
+	long long	start;
+
+	start = get_current_time();
+	while (get_current_time() - start < milliseconds)
+		usleep(100);
 }
