@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:31:50 by dias              #+#    #+#             */
-/*   Updated: 2025/04/12 11:21:20 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/12 11:34:28 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ void		init_philosophers(t_data *data);
 long long	get_current_time(void);
 void		ft_sleep(int milliseconds);
 void		print_status(t_philo *philo, char *message);
+void		philo_eat(t_philo *philo);
+void		philo_sleep(t_philo *philo);
+void		philo_think(t_philo *philo);
 
 #endif
