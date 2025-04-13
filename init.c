@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:25:53 by dias              #+#    #+#             */
-/*   Updated: 2025/04/11 11:53:02 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/13 19:59:38 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	init_philosophers(t_data *data)
 		data->philos[i].right_fork = (i + 1) % data->num_philos;
 		data->philos[i].meals_eaten = 0;
 		data->philos[i].is_eating = 0;
-		data->philos[i].last_meal_time = 0;
+		data->philos[i].last_meal_time = get_current_time();
 		data->philos[i].data = data;
 	}
 }
