@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:31:50 by dias              #+#    #+#             */
-/*   Updated: 2025/04/12 11:34:28 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/13 19:43:02 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,12 @@ void		print_status(t_philo *philo, char *message);
 void		philo_eat(t_philo *philo);
 void		philo_sleep(t_philo *philo);
 void		philo_think(t_philo *philo);
+int			start_simulation(t_data *data);
+int			is_simulation_finished(t_data *data);
+void		*philo_routine(void *arg);
+void		*monitor_routine(void *arg);
+int			check_philosopher_death(t_data *data, int i);
+int			check_all_ate_enough(t_data *data);
+void		cleanup(t_data *data);
 
 #endif
