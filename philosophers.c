@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:34:16 by dias              #+#    #+#             */
-/*   Updated: 2025/04/13 19:31:25 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/13 19:46:06 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,12 @@ int	main(int ac, char *av[])
 		printf("Error during initialization\n");
 		return (0);
 	}
+	if (start_simulation(&data))
+	{
+		printf("Error during simulation\n");
+		cleanup(&data);
+		return (1);
+	}
+	cleanup(&data);
+	return (0);
 }
