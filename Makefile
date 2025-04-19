@@ -6,7 +6,7 @@
 #    By: dias <dias@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/17 10:15:03 by dias              #+#    #+#              #
-#    Updated: 2025/04/17 10:49:26 by dias             ###   ########.fr        #
+#    Updated: 2025/04/19 18:33:50 by dias             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM		= rm -f
 
 SRCS	= actions.c cleanup.c ft_atoi.c init.c is_simulation_finished.c \
 			monitor_routine.c parse_arguments.c philo_routine.c philosophers.c \
-			start_simulation.c time.c
+			start_simulation.c time.c ft_strcmp.c
 
 OBJS	= $(SRCS:.c=.o)
 

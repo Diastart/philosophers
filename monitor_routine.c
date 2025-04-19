@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 19:36:57 by dias              #+#    #+#             */
-/*   Updated: 2025/04/13 19:40:45 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/19 18:25:44 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	*monitor_routine(void *arg)
 		}
 		if (check_all_ate_enough(data))
 			return (NULL);
-		ft_sleep(1);
+		usleep(1000);
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 11:15:40 by dias              #+#    #+#             */
-/*   Updated: 2025/04/19 18:11:29 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/19 18:28:28 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void	print_status(t_philo *philo, char *message)
 {
 	t_data		*data;
 	long long	timestamp;
+	int			is_death_message;
 
+	is_death_message = (ft_strcmp(message, "died") == 0);
 	data = philo->data;
 	pthread_mutex_lock(&data->print_mutex);
 	timestamp = get_current_time() - data->start_time;
 	pthread_mutex_lock(&data->death_mutex);
-	if (!data->someone_died && !data->all_ate_enough)
+	if ((is_death_message || (!data->someone_died && !data->all_ate_enough)))
 		printf("Time:%lld philo:%d %s\n", timestamp, philo->id, message);
 	pthread_mutex_unlock(&data->death_mutex);
 	pthread_mutex_unlock(&data->print_mutex);

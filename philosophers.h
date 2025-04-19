@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:31:50 by dias              #+#    #+#             */
-/*   Updated: 2025/04/13 19:50:07 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/19 18:30:13 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void		*monitor_routine(void *arg);
 int			check_philosopher_death(t_data *data, int i);
 int			check_all_ate_enough(t_data *data);
 void		cleanup(t_data *data);
+int			ft_strcmp(const char *s1, const char *s2);
 
 #endif
