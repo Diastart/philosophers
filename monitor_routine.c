@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 19:36:57 by dias              #+#    #+#             */
-/*   Updated: 2025/04/19 18:25:44 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/19 18:39:17 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	check_philosopher_death(t_data *data, int i)
 {
 	long long	time_since_last_meal;
+	int			already_died;
 
 	pthread_mutex_lock(&data->meal_mutex);
 	time_since_last_meal = get_current_time() - data->philos[i].last_meal_time;
@@ -22,9 +23,11 @@ int	check_philosopher_death(t_data *data, int i)
 	{
 		pthread_mutex_unlock(&data->meal_mutex);
 		pthread_mutex_lock(&data->death_mutex);
+		already_died = data->someone_died;
 		data->someone_died = 1;
 		pthread_mutex_unlock(&data->death_mutex);
-		print_status(&data->philos[i], "died");
+		if (!already_died)
+			print_status(&data->philos[i], "died");
 		return (1);
 	}
 	pthread_mutex_unlock(&data->meal_mutex);
