@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:31:50 by dias              #+#    #+#             */
-/*   Updated: 2025/04/19 18:30:13 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/21 15:12:26 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ int			check_philosopher_death(t_data *data, int i);
 int			check_all_ate_enough(t_data *data);
 void		cleanup(t_data *data);
 int			ft_strcmp(const char *s1, const char *s2);
+void		join_threads(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 18:43:59 by dias              #+#    #+#             */
-/*   Updated: 2025/04/13 20:00:37 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/21 15:11:08 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	start_simulation(t_data *data)
 		if (pthread_create(&data->philos[i].thread, NULL, \
 			philo_routine, &data->philos[i]))
 			return (1);
-		pthread_detach(data->philos[i].thread);
 	}
 	usleep(1000);
 	if (pthread_create(&monitor, NULL, monitor_routine, data))

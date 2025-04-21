@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.c                                     :+:      :+:    :+:   */
+/*   join_threads.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 10:34:16 by dias              #+#    #+#             */
-/*   Updated: 2025/04/21 15:12:49 by dias             ###   ########.fr       */
+/*   Created: 2025/04/21 15:11:38 by dias              #+#    #+#             */
+/*   Updated: 2025/04/21 15:12:10 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int	main(int ac, char *av[])
+void	join_threads(t_data *data)
 {
-	t_data	data;
+	int	i;
 
-	if (ac < 5 || ac > 6)
-	{
-		printf("Number of inputs does not satisfy constraints\n");
-		return (0);
-	}
-	if (parse_arguments(ac, av, &data))
-		return (0);
-	if (init(&data))
-	{
-		printf("Error during initialization\n");
-		return (0);
-	}
-	if (start_simulation(&data))
-	{
-		printf("Error during simulation\n");
-		cleanup(&data);
-		return (1);
-	}
-	cleanup(&data);
-	join_threads(&data);
-	return (0);
+	i = -1;
+	while (++i < data->num_philos)
+		pthread_join(data->philos[i].thread, NULL);
 }
