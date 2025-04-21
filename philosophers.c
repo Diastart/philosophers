@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:34:16 by dias              #+#    #+#             */
-/*   Updated: 2025/04/21 15:12:49 by dias             ###   ########.fr       */
+/*   Updated: 2025/04/21 16:06:24 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char *av[])
 		cleanup(&data);
 		return (1);
 	}
-	cleanup(&data);
 	join_threads(&data);
+	cleanup(&data);
 	return (0);
 }
